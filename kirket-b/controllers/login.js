@@ -7,12 +7,18 @@ const jwt = require("jsonwebtoken");
 const passport = require("passport");
 app.use(passport.initialize());
 require("./../config/passport");
+require("dotenv").config();
 
+const jwt_secret=process.env.JWT_SECRET;
 const login = async (req, res) => {
   console.log("login route hit");
 
   const user = await UserModel.findOne({ username: req.body.username });
-  const jwt_secret=process.env.JWT_SECRET;
+
+  console.log("jwt_secret")
+  console.log(jwt_secret)
+
+ 
 
   //3 case possible ,a) Not registered b)password incorrect c)everything is correct
 
