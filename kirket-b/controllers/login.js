@@ -15,9 +15,6 @@ const login = async (req, res) => {
 
   const user = await UserModel.findOne({ username: req.body.username });
 
-  console.log("jwt_secret")
-  console.log(jwt_secret)
-
  
 
   //3 case possible ,a) Not registered b)password incorrect c)everything is correct
