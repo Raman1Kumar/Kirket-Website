@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
+const base_url=process.env.REACT_APP_BASE_URL
 
 function Edit(props) {
   const [show, setShow] = useState(false);
@@ -23,7 +24,7 @@ function Edit(props) {
       localStorage.setItem("kirket.phone", f_phone);
 
       axios
-        .post("/update_phone", {
+        .post(`${base_url}/update_phone`, {
           username: username,
           phone: f_phone,
         })
@@ -39,7 +40,7 @@ function Edit(props) {
       localStorage.setItem("kirket.name", f_name);
 
       axios
-        .post("/update_name", {
+        .post(`${base_url}/update_name`, {
           username: username,
           name: f_name,
         })

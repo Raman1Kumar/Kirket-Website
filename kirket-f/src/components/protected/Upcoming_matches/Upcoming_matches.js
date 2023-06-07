@@ -1,13 +1,13 @@
-import axios from 'axios'
+
 import React, { useEffect, useState } from 'react'
 
 import Upcoming_matches_template from './Upcoming_matches_template';
-
+const base_url=process.env.REACT_APP_BASE_URL
 
  function Upcoming_matches() {
 
    
-    let API="/match_list";
+    let API=`${base_url}/match_list`;
 
 
     const [matches,setMatches]=useState([]);

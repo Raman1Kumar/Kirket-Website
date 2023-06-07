@@ -10,6 +10,8 @@ import { useEffect } from "react";
 
 import AutohideUpdate from "../Toast/Toast";
 
+const base_url=process.env.REACT_APP_BASE_URL
+
 function Login() {
   //useNavigate to send user to protected route
   let navigate = useNavigate();
@@ -48,14 +50,14 @@ function Login() {
     const token = localStorage.getItem("token");
 
     axios
-      .get("/protected", {
+      .get(`${base_url}/protected`, {
         headers: {
           Authorization: token,
         },
       })
       .then((res) => {
         console.log(res);
-        navigate("/Protected");
+        navigate(`/Protected`);
       })
       .catch((err) => {
         console.log(err);
@@ -67,6 +69,8 @@ function Login() {
   const onsubmitHandler = (e) => {
     e.preventDefault();
 
+
+
     console.log(Email);
     console.log(Password);
     const username = Email;
@@ -75,8 +79,11 @@ function Login() {
 
     //toggleState 1 ,Hit login route ,if login successful go to protected else go to main page
     if (toggleState === 1) {
+
+      console.log("hereasdfasf")
+     
       axios
-        .post("/login", { username, password })
+        .post(`${base_url}/login`, { username, password })
         .then((user) => {
           console.log(user);
           localStorage.setItem("token", user.data.token);
@@ -100,7 +107,7 @@ function Login() {
     //toggleState 2 ,Hit Register route ,if Register successful go for login .
     if (toggleState === 2) {
       axios
-        .post("/register", {
+        .post(`${base_url}/register`, {
           Name,
           username: Email_R,
           password: Password_R,

@@ -6,6 +6,9 @@ import End from "../page2/End/End";
 import AboutMe from "./About_Me/AboutMe";
 import Setting from "./Setting/Setting";
 import profile_img from "./../images/kirket_profile.png";
+const base_url=process.env.REACT_APP_BASE_URL
+
+
 function Protected() {
   const about = {
     src: profile_img,
@@ -15,12 +18,13 @@ function Protected() {
 
   let navigate = useNavigate();
 
+
   //Checks if token is valid then allow else Navigate to main page
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:4000/protected", {
+      .get(`${base_url}/protected`, {
         headers: {
           Authorization: token,
         },

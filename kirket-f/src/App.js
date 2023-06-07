@@ -1,3 +1,4 @@
+
 import Nav from "./components/navbar/navbar";
 import Page1 from "./components/page1/Page1";
 import firebase from "./firebase";
@@ -7,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Homepage from "./components/page2/homepage";
 
 import "./App.css"
+
 
 function App() {
   return (
