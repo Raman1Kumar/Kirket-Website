@@ -1,0 +1,9 @@
+.stripped-grid .row:nth-child(2n) {
+    background-color: red !important;
+  }
+
+#ph_outside .row{
+  
+  box-shadow: 	0px 10px 10px 1px rgba(0,0,0,0.08);
+  border-radius: 4rem;
+}

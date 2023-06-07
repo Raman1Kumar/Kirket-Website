@@ -1,0 +1,44 @@
+
+#e_outside{
+    margin-top: 8rem;
+}
+
+.footer-left a{
+    margin: .2rem;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+#about_com{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#e_icons a{
+    margin: 1rem;
+}
+
+.e_center{
+    display: flex;
+    /* flex-direction: column; */
+    align-items:  center;
+    justify-content: start;
+   
+}
+.e_center i{
+    margin-right: 2rem;
+    
+    align-items: center;
+    justify-content: center;
+}
+e_center_text{
+
+}
+
+#end_img{
+    margin-left: 3rem;
+}
+
+.marginy{
+    margin: 4rem 0rem;
+}
