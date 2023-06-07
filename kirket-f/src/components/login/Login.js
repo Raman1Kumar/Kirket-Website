@@ -80,7 +80,7 @@ function Login() {
     //toggleState 1 ,Hit login route ,if login successful go to protected else go to main page
     if (toggleState === 1) {
 
-      console.log("hereasdfasf")
+      console.log(`${base_url}/login`)
      
       axios
         .post(`${base_url}/login`, { username, password })
@@ -96,16 +96,17 @@ function Login() {
           navigate("/Protected");
         })
         .catch((err) => {
-          console.log("setting login show");
-          console.log(Loginshow);
+         
           setLoginshow(1);
-          console.log(Loginshow);
+         
           console.log(err);
         });
     }
 
     //toggleState 2 ,Hit Register route ,if Register successful go for login .
     if (toggleState === 2) {
+
+      console.log(`${base_url}/register`)
       axios
         .post(`${base_url}/register`, {
           Name,

@@ -9,11 +9,7 @@ function AutohideUpdate(props) {
     const [show, setShow] = useState(false);
     
 
-  console.log('rendered')
-
-  console.log(props.login);
-  console.log(props.register);
-
+  
   
   
   if(props.login==1 && show==false){
@@ -33,7 +29,6 @@ function AutohideUpdate(props) {
     setShow(true);
   }
 
-  console.log(show)
 
   const onCloseHandler=()=>{
 
