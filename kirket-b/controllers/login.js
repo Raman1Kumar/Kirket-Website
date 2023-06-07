@@ -12,6 +12,7 @@ const login = async (req, res) => {
   console.log("login route hit");
 
   const user = await UserModel.findOne({ username: req.body.username });
+  const jwt_secret=process.env.JWT_SECRET;
 
   //3 case possible ,a) Not registered b)password incorrect c)everything is correct
 
@@ -39,7 +40,7 @@ const login = async (req, res) => {
   };
 
   //Sign payload and send
-  const token = jwt.sign(payload, "Random String", { expiresIn: "1d" });
+  const token = jwt.sign(payload, jwt_secret, { expiresIn: "1d" });
 
   //res.send
   return res.status(200).send({
