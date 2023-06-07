@@ -12,7 +12,7 @@ require("dotenv").config();
 
 app.use("", product_routes);
 
-let PORT = 4000 || process.env.PORT;
+let PORT = process.env.PORT || 4000;
 const uri = process.env.MONGODB_URI;
 
 const start = async () => {

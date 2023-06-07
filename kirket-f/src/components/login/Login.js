@@ -48,7 +48,7 @@ function Login() {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:4000/protected", {
+      .get("/protected", {
         headers: {
           Authorization: token,
         },
@@ -76,7 +76,7 @@ function Login() {
     //toggleState 1 ,Hit login route ,if login successful go to protected else go to main page
     if (toggleState === 1) {
       axios
-        .post("http://localhost:4000/login", { username, password })
+        .post("/login", { username, password })
         .then((user) => {
           console.log(user);
           localStorage.setItem("token", user.data.token);
@@ -100,7 +100,7 @@ function Login() {
     //toggleState 2 ,Hit Register route ,if Register successful go for login .
     if (toggleState === 2) {
       axios
-        .post("http://localhost:4000/register", {
+        .post("/register", {
           Name,
           username: Email_R,
           password: Password_R,

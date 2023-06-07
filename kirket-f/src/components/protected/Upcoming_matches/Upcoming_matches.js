@@ -7,7 +7,7 @@ import Upcoming_matches_template from './Upcoming_matches_template';
  function Upcoming_matches() {
 
    
-    let API="http://localhost:4000/match_list";
+    let API="/match_list";
 
 
     const [matches,setMatches]=useState([]);

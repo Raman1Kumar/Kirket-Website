@@ -5,7 +5,7 @@ function Active_matches() {
 
 
 
-    let API="http://localhost:4000/match_list";
+    // let API="/match_list";
 
 
     const stat=localStorage.getItem("kirket.stat");
